@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="addAdmin" type="tns:addAdmin"/>
+
+<xs:element name="addAdminResponse" type="tns:addAdminResponse"/>
+
+<xs:element name="admin" type="tns:admin"/>
+
+<xs:element name="listAdmin" type="tns:listAdmin"/>
+
+<xs:element name="listAdminResponse" type="tns:listAdminResponse"/>
+
+<xs:complexType name="listAdmin">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:admin" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="admin">
+<xs:sequence>
+<xs:element name="idAdmin" type="xs:int" minOccurs="0"/>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="pwd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAdmin">
+<xs:sequence>
+<xs:element name="login" type="xs:string" minOccurs="0"/>
+<xs:element name="pwd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAdminResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
