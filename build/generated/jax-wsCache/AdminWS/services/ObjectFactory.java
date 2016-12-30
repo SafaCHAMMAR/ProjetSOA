@@ -25,8 +25,10 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _Admin_QNAME = new QName("http://services/", "admin");
+    private final static QName _ExistAdminResponse_QNAME = new QName("http://services/", "existAdminResponse");
     private final static QName _ListAdmin_QNAME = new QName("http://services/", "listAdmin");
     private final static QName _ListAdminResponse_QNAME = new QName("http://services/", "listAdminResponse");
+    private final static QName _ExistAdmin_QNAME = new QName("http://services/", "existAdmin");
     private final static QName _AddAdminResponse_QNAME = new QName("http://services/", "addAdminResponse");
     private final static QName _AddAdmin_QNAME = new QName("http://services/", "addAdmin");
 
@@ -46,6 +48,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ExistAdmin }
+     * 
+     */
+    public ExistAdmin createExistAdmin() {
+        return new ExistAdmin();
+    }
+
+    /**
      * Create an instance of {@link AddAdmin }
      * 
      */
@@ -59,6 +69,14 @@ public class ObjectFactory {
      */
     public Admin createAdmin() {
         return new Admin();
+    }
+
+    /**
+     * Create an instance of {@link ExistAdminResponse }
+     * 
+     */
+    public ExistAdminResponse createExistAdminResponse() {
+        return new ExistAdminResponse();
     }
 
     /**
@@ -87,6 +105,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExistAdminResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "existAdminResponse")
+    public JAXBElement<ExistAdminResponse> createExistAdminResponse(ExistAdminResponse value) {
+        return new JAXBElement<ExistAdminResponse>(_ExistAdminResponse_QNAME, ExistAdminResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListAdmin }{@code >}}
      * 
      */
@@ -102,6 +129,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services/", name = "listAdminResponse")
     public JAXBElement<ListAdminResponse> createListAdminResponse(ListAdminResponse value) {
         return new JAXBElement<ListAdminResponse>(_ListAdminResponse_QNAME, ListAdminResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ExistAdmin }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "existAdmin")
+    public JAXBElement<ExistAdmin> createExistAdmin(ExistAdmin value) {
+        return new JAXBElement<ExistAdmin>(_ExistAdmin_QNAME, ExistAdmin.class, null, value);
     }
 
     /**

@@ -27,18 +27,6 @@ public interface AdminWS {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<services.Admin>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAdmin", targetNamespace = "http://services/", className = "services.ListAdmin")
-    @ResponseWrapper(localName = "listAdminResponse", targetNamespace = "http://services/", className = "services.ListAdminResponse")
-    @Action(input = "http://services/AdminWS/listAdminRequest", output = "http://services/AdminWS/listAdminResponse")
-    public List<Admin> listAdmin();
-
-    /**
-     * 
      * @param login
      * @param pwd
      */
@@ -51,5 +39,35 @@ public interface AdminWS {
         String login,
         @WebParam(name = "pwd", targetNamespace = "")
         String pwd);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<services.Admin>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAdmin", targetNamespace = "http://services/", className = "services.ListAdmin")
+    @ResponseWrapper(localName = "listAdminResponse", targetNamespace = "http://services/", className = "services.ListAdminResponse")
+    @Action(input = "http://services/AdminWS/listAdminRequest", output = "http://services/AdminWS/listAdminResponse")
+    public List<Admin> listAdmin();
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "existAdmin", targetNamespace = "http://services/", className = "services.ExistAdmin")
+    @ResponseWrapper(localName = "existAdminResponse", targetNamespace = "http://services/", className = "services.ExistAdminResponse")
+    @Action(input = "http://services/AdminWS/existAdminRequest", output = "http://services/AdminWS/existAdminResponse")
+    public boolean existAdmin(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
 }

@@ -1,10 +1,9 @@
 <%-- 
-    Document   : index
-    Created on : Dec 29, 2016, 4:40:24 PM
+    Document   : espaceAdmin
+    Created on : Dec 30, 2016, 10:14:56 PM
     Author     : safa
 --%>
 
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!--
 Author: W3layouts
@@ -59,8 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="menu__item"><a href="#about" class="menu__link scroll">About</a></li>
 						<li class="menu__item"><a href="#services" class="menu__link scroll">Services</a></li>
 						<li class="menu__item"><a href="#portfolio" class="menu__link scroll">Voyages</a></li>
-						<li class="menu__item"><a href="#contact" class="menu__link scroll">Admin</a></li>
-						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Reserver</a></li>
+						<li class="menu__item"><a href="#contact" class="menu__link scroll">Booking</a></li>
+						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Add Voyage</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
@@ -180,43 +179,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>					
 								</li>
 								<li class="span1_of_2 left adult">
-									<h5>Adults (18+)</h5>
-									<!--start section-room-->
-									<div class="section_room">
-										<select id="country" onchange="change_country(this.value)" class="frm-field required">
-											<option value="null">1</option>
-											<option value="null">2</option>         
-											<option value="AX">3</option>
-											<option value="AX">4</option>
-											<option value="AX">5</option>
-											<option value="AX">6</option>
-										</select>
-									</div>	
+									<h5>Places</h5>
+									<div class="book_date">
+										<form>
+											<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+											<input type="text" placeholder="places" class="typeahead1 input-md form-control tt-input" required="">
+										</form>
+									</div>		
 								</li>
 								<li class="span1_of_2 left children">
-									<h5>Children (0-17)</h5>
+									<h5>Price</h5>
 									<!--start section-room-->
-									<div class="section_room">
-										<select id="country" onchange="change_country(this.value)" class="frm-field required">
-											<option value="null">1</option>
-											<option value="null">2</option>         
-											<option value="AX">3</option>
-											<option value="AX">4</option>
-											<option value="AX">5</option>
-											<option value="AX">6</option>
-										</select>
-									</div>	
+									<div class="book_date">
+										<form>
+											<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+											<input type="text" placeholder="price" class="typeahead1 input-md form-control tt-input" required="">
+										</form>
+									</div>		
 								</li>
-								<li class="span1_of_2 economy">
+								</li>
+								<!--<li class="span1_of_2 economy">
 									<h5>Class</h5>
 									<!--start section-room-->
-									<div class="section_room">
+									<!--<div class="section_room">
 										<select id="country" onchange="change_country(this.value)" class="frm-field required">
 											<option value="null">Economy</option>
 											<option value="null">Business</option>     
 										</select>
 									</div>	
-								</li>
+								</li> -->
 							</ul>
 							<div class="clearfix"></div>
 						</div>
@@ -774,20 +765,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--contact -->
 	<div class="contact" id="contact">
 		<div class="container">
-			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Admin</h3>
+			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Contact Us</h3>
 			<div class="contact-form">
 				<p class="wow slideInDown animated" data-wow-delay=".5s">Sed ut turpis elit ullamcorper in auctor non, accumsan vel lacus nulla auctor cursus nunc. Maecenas ultricies dolor in urna tempus, id egestas erat finibus  interdum lectus eget scelerisque.</p>
-				<form action="http://localhost:8080/Travel_Agency/adminWS/check" method="POST">
+				<form>
 					<div class="col-md-6 form-left wow fadeInDown animated" data-wow-delay=".5s">
-						<input type="text" placeholder="Login" name="login" required="">
+						<input type="text" placeholder="Name" required="">
 					</div>
 					<div class="col-md-6 form-right wow fadeInDown animated" data-wow-delay=".5s">
-						<input class="email" type="text" placeholder="password" required="" name ="pwd">
+						<input class="email" type="text" placeholder="Email" required="">
 					</div>
 					<div class="clearfix"> </div>
-					<!--<input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="">
-					<textarea class="wow fadeInDown animated" data-wow-delay=".9s" placeholder="Message" required=""></textarea>-->
-					<input type="submit" value="SUBMIT" name="submit" >
+					<input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="">
+					<textarea class="wow fadeInDown animated" data-wow-delay=".9s" placeholder="Message" required=""></textarea>
+					<input type="submit" value="SUBMIT" >
 				</form>
 			</div>
 		</div>
@@ -914,40 +905,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
-          
-    
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	services.AdminWS_Service service = new services.AdminWS_Service();
-	services.AdminWS port = service.getAdminWSPort();
-	System.out.println("***********************");
-	// TODO process result here
-        java.lang.String login =request.getParameter("login");
-        java.lang.String pwd = request.getParameter("pwd");
-	boolean result = port.existAdmin(login,pwd);
-        System.out.println("\n\n ------------login="+login+"   pwd="+pwd+"existe"+result+"------------\n\n");
-        //System.out.println("\n\n ------------"+result.size()+"------------\n\n");
-       //out.println("\n\n ------------"+result.get(1).getLogin()+"------------\n\n");
-	//out.println("Result = "+result);java.lang.String login = "";
-	
-        if(request.getParameter("submit")!=null){
-	port.addAdmin(login, pwd);
-        System.out.println("\n\n add adin\n\n");}
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    
-    %>
-    <%-- end web service invocation --%><hr/>
-
-    <%-- end web service invocation --%><hr/>
-
-    
-    
-   
-        
-    </body>
+</body>
 </html>
-
-

@@ -4,30 +4,49 @@
 <xsd:import namespace="http://services/" schemaLocation="http://localhost:8080/AdminWS/AdminWS?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="listAdmin">
-<part name="parameters" element="tns:listAdmin"/>
-</message>
-<message name="listAdminResponse">
-<part name="parameters" element="tns:listAdminResponse"/>
-</message>
 <message name="addAdmin">
 <part name="parameters" element="tns:addAdmin"/>
 </message>
 <message name="addAdminResponse">
 <part name="parameters" element="tns:addAdminResponse"/>
 </message>
+<message name="listAdmin">
+<part name="parameters" element="tns:listAdmin"/>
+</message>
+<message name="listAdminResponse">
+<part name="parameters" element="tns:listAdminResponse"/>
+</message>
+<message name="existAdmin">
+<part name="parameters" element="tns:existAdmin"/>
+</message>
+<message name="existAdminResponse">
+<part name="parameters" element="tns:existAdminResponse"/>
+</message>
 <portType name="AdminWS">
-<operation name="listAdmin">
-<input wsam:Action="http://services/AdminWS/listAdminRequest" message="tns:listAdmin"/>
-<output wsam:Action="http://services/AdminWS/listAdminResponse" message="tns:listAdminResponse"/>
-</operation>
 <operation name="addAdmin">
 <input wsam:Action="http://services/AdminWS/addAdminRequest" message="tns:addAdmin"/>
 <output wsam:Action="http://services/AdminWS/addAdminResponse" message="tns:addAdminResponse"/>
 </operation>
+<operation name="listAdmin">
+<input wsam:Action="http://services/AdminWS/listAdminRequest" message="tns:listAdmin"/>
+<output wsam:Action="http://services/AdminWS/listAdminResponse" message="tns:listAdminResponse"/>
+</operation>
+<operation name="existAdmin">
+<input wsam:Action="http://services/AdminWS/existAdminRequest" message="tns:existAdmin"/>
+<output wsam:Action="http://services/AdminWS/existAdminResponse" message="tns:existAdminResponse"/>
+</operation>
 </portType>
 <binding name="AdminWSPortBinding" type="tns:AdminWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="addAdmin">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="listAdmin">
 <soap:operation soapAction=""/>
 <input>
@@ -37,7 +56,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addAdmin">
+<operation name="existAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

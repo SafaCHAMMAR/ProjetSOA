@@ -6,6 +6,10 @@
 
 <xs:element name="admin" type="tns:admin"/>
 
+<xs:element name="existAdmin" type="tns:existAdmin"/>
+
+<xs:element name="existAdminResponse" type="tns:existAdminResponse"/>
+
 <xs:element name="listAdmin" type="tns:listAdmin"/>
 
 <xs:element name="listAdminResponse" type="tns:listAdminResponse"/>
@@ -37,5 +41,18 @@
 
 <xs:complexType name="addAdminResponse">
 <xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="existAdmin">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="existAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
 </xs:complexType>
 </xs:schema>

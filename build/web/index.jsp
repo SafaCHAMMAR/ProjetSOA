@@ -58,9 +58,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
 						<li class="menu__item"><a href="#about" class="menu__link scroll">About</a></li>
 						<li class="menu__item"><a href="#services" class="menu__link scroll">Services</a></li>
-						<li class="menu__item"><a href="#portfolio" class="menu__link scroll">Portfolio</a></li>
+						<li class="menu__item"><a href="#portfolio" class="menu__link scroll">Voyages</a></li>
 						<li class="menu__item"><a href="#contact" class="menu__link scroll">Admin</a></li>
-						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Book Now</a></li>
+						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Reserver</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
@@ -777,7 +777,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Admin</h3>
 			<div class="contact-form">
 				<p class="wow slideInDown animated" data-wow-delay=".5s">Sed ut turpis elit ullamcorper in auctor non, accumsan vel lacus nulla auctor cursus nunc. Maecenas ultricies dolor in urna tempus, id egestas erat finibus  interdum lectus eget scelerisque.</p>
-				<form>
+				<form action="http://localhost:8080/Travel_Agency/adminWS/check" method="POST">
 					<div class="col-md-6 form-left wow fadeInDown animated" data-wow-delay=".5s">
 						<input type="text" placeholder="Login" name="login" required="">
 					</div>
@@ -923,14 +923,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	services.AdminWS port = service.getAdminWSPort();
 	System.out.println("***********************");
 	// TODO process result here
-	java.util.List<services.Admin> result = port.listAdmin();
-        System.out.println("\n\n ------------"+result.size()+"------------\n\n");
-       out.println("\n\n ------------"+result.get(1).getLogin()+"------------\n\n");
-	//out.println("Result = "+result);java.lang.String login = "";
-	java.lang.String login =request.getParameter("login");
+        java.lang.String login =request.getParameter("login");
         java.lang.String pwd = request.getParameter("pwd");
+	boolean result = port.existAdmin(login,pwd);
+        System.out.println("\n\n ------------login="+login+"   pwd="+pwd+"existe"+result+"------------\n\n");
+        //System.out.println("\n\n ------------"+result.size()+"------------\n\n");
+       //out.println("\n\n ------------"+result.get(1).getLogin()+"------------\n\n");
+	//out.println("Result = "+result);java.lang.String login = "";
+	
         if(request.getParameter("submit")!=null){
-	port.addAdmin(login, pwd);}
+	port.addAdmin(login, pwd);
+        System.out.println("\n\n add adin\n\n");}
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
