@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _AddVolResponse_QNAME = new QName("http://services/", "addVolResponse");
     private final static QName _Admin_QNAME = new QName("http://services/", "admin");
     private final static QName _ExistAdminResponse_QNAME = new QName("http://services/", "existAdminResponse");
     private final static QName _ListAdmin_QNAME = new QName("http://services/", "listAdmin");
@@ -31,6 +32,7 @@ public class ObjectFactory {
     private final static QName _ExistAdmin_QNAME = new QName("http://services/", "existAdmin");
     private final static QName _AddAdminResponse_QNAME = new QName("http://services/", "addAdminResponse");
     private final static QName _AddAdmin_QNAME = new QName("http://services/", "addAdmin");
+    private final static QName _AddVol_QNAME = new QName("http://services/", "addVol");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: services
@@ -56,6 +58,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddVol }
+     * 
+     */
+    public AddVol createAddVol() {
+        return new AddVol();
+    }
+
+    /**
      * Create an instance of {@link AddAdmin }
      * 
      */
@@ -69,6 +79,14 @@ public class ObjectFactory {
      */
     public Admin createAdmin() {
         return new Admin();
+    }
+
+    /**
+     * Create an instance of {@link AddVolResponse }
+     * 
+     */
+    public AddVolResponse createAddVolResponse() {
+        return new AddVolResponse();
     }
 
     /**
@@ -93,6 +111,15 @@ public class ObjectFactory {
      */
     public ListAdminResponse createListAdminResponse() {
         return new ListAdminResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddVolResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "addVolResponse")
+    public JAXBElement<AddVolResponse> createAddVolResponse(AddVolResponse value) {
+        return new JAXBElement<AddVolResponse>(_AddVolResponse_QNAME, AddVolResponse.class, null, value);
     }
 
     /**
@@ -156,6 +183,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services/", name = "addAdmin")
     public JAXBElement<AddAdmin> createAddAdmin(AddAdmin value) {
         return new JAXBElement<AddAdmin>(_AddAdmin_QNAME, AddAdmin.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddVol }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "addVol")
+    public JAXBElement<AddVol> createAddVol(AddVol value) {
+        return new JAXBElement<AddVol>(_AddVol_QNAME, AddVol.class, null, value);
     }
 
 }

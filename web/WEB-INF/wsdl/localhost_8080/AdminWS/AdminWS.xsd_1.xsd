@@ -4,6 +4,10 @@
 
 <xs:element name="addAdminResponse" type="tns:addAdminResponse"/>
 
+<xs:element name="addVol" type="tns:addVol"/>
+
+<xs:element name="addVolResponse" type="tns:addVolResponse"/>
+
 <xs:element name="admin" type="tns:admin"/>
 
 <xs:element name="existAdmin" type="tns:existAdmin"/>
@@ -30,6 +34,21 @@
 <xs:element name="login" type="xs:string" minOccurs="0"/>
 <xs:element name="pwd" type="xs:string" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addVol">
+<xs:sequence>
+<xs:element name="villeDep" type="xs:string" minOccurs="0"/>
+<xs:element name="villeDest" type="xs:string" minOccurs="0"/>
+<xs:element name="placeDisp" type="xs:int"/>
+<xs:element name="prix" type="xs:int"/>
+<xs:element name="dateDep" type="xs:string" minOccurs="0"/>
+<xs:element name="DateArr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addVolResponse">
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="addAdmin">

@@ -27,33 +27,6 @@ public interface AdminWS {
 
     /**
      * 
-     * @param login
-     * @param pwd
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addAdmin", targetNamespace = "http://services/", className = "services.AddAdmin")
-    @ResponseWrapper(localName = "addAdminResponse", targetNamespace = "http://services/", className = "services.AddAdminResponse")
-    @Action(input = "http://services/AdminWS/addAdminRequest", output = "http://services/AdminWS/addAdminResponse")
-    public void addAdmin(
-        @WebParam(name = "login", targetNamespace = "")
-        String login,
-        @WebParam(name = "pwd", targetNamespace = "")
-        String pwd);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<services.Admin>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAdmin", targetNamespace = "http://services/", className = "services.ListAdmin")
-    @ResponseWrapper(localName = "listAdminResponse", targetNamespace = "http://services/", className = "services.ListAdminResponse")
-    @Action(input = "http://services/AdminWS/listAdminRequest", output = "http://services/AdminWS/listAdminResponse")
-    public List<Admin> listAdmin();
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -69,5 +42,59 @@ public interface AdminWS {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param login
+     * @param pwd
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addAdmin", targetNamespace = "http://services/", className = "services.AddAdmin")
+    @ResponseWrapper(localName = "addAdminResponse", targetNamespace = "http://services/", className = "services.AddAdminResponse")
+    @Action(input = "http://services/AdminWS/addAdminRequest", output = "http://services/AdminWS/addAdminResponse")
+    public void addAdmin(
+        @WebParam(name = "login", targetNamespace = "")
+        String login,
+        @WebParam(name = "pwd", targetNamespace = "")
+        String pwd);
+
+    /**
+     * 
+     * @param placeDisp
+     * @param prix
+     * @param dateArr
+     * @param villeDest
+     * @param dateDep
+     * @param villeDep
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addVol", targetNamespace = "http://services/", className = "services.AddVol")
+    @ResponseWrapper(localName = "addVolResponse", targetNamespace = "http://services/", className = "services.AddVolResponse")
+    @Action(input = "http://services/AdminWS/addVolRequest", output = "http://services/AdminWS/addVolResponse")
+    public void addVol(
+        @WebParam(name = "villeDep", targetNamespace = "")
+        String villeDep,
+        @WebParam(name = "villeDest", targetNamespace = "")
+        String villeDest,
+        @WebParam(name = "placeDisp", targetNamespace = "")
+        int placeDisp,
+        @WebParam(name = "prix", targetNamespace = "")
+        int prix,
+        @WebParam(name = "dateDep", targetNamespace = "")
+        String dateDep,
+        @WebParam(name = "DateArr", targetNamespace = "")
+        String dateArr);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<services.Admin>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAdmin", targetNamespace = "http://services/", className = "services.ListAdmin")
+    @ResponseWrapper(localName = "listAdminResponse", targetNamespace = "http://services/", className = "services.ListAdminResponse")
+    @Action(input = "http://services/AdminWS/listAdminRequest", output = "http://services/AdminWS/listAdminResponse")
+    public List<Admin> listAdmin();
 
 }

@@ -50,17 +50,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1 class="wow fadeInUp animated" data-wow-delay=".5s"><a href="index.html">Vacation</a></h1>
+					<h1 class="wow fadeInUp animated" data-wow-delay=".5s"><a href="index.jsp">Vacation</a></h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-right menu__list menu--shylock">
-						<li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
+						<li class="menu__item menu__item--current"><a href="index.jsp" class="menu__link">Home</a></li>
 						<li class="menu__item"><a href="#about" class="menu__link scroll">About</a></li>
 						<li class="menu__item"><a href="#services" class="menu__link scroll">Services</a></li>
-						<li class="menu__item"><a href="#portfolio" class="menu__link scroll">Voyages</a></li>
+						<li class="menu__item"><a href="#portfolio" class="menu__link scroll">Catalog</a></li>
 						<li class="menu__item"><a href="#contact" class="menu__link scroll">Admin</a></li>
-						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Reserver</a></li>
+						<li><a href="#" class="sign-in" data-toggle="modal" data-target="#myModal">Book now</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
@@ -597,7 +597,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--portfolio-->
 	<div id="portfolio" class="portfolio">
 		<div class="container">
-			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Portfolio</h3>
+			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Catalog</h3>
 			<div class="sap_tabs">			
 				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 					<ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
@@ -776,13 +776,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Admin</h3>
 			<div class="contact-form">
-				<p class="wow slideInDown animated" data-wow-delay=".5s">Sed ut turpis elit ullamcorper in auctor non, accumsan vel lacus nulla auctor cursus nunc. Maecenas ultricies dolor in urna tempus, id egestas erat finibus  interdum lectus eget scelerisque.</p>
+				<p class="wow slideInDown animated" </p>
 				<form action="http://localhost:8080/Travel_Agency/adminWS/check" method="POST">
 					<div class="col-md-6 form-left wow fadeInDown animated" data-wow-delay=".5s">
 						<input type="text" placeholder="Login" name="login" required="">
 					</div>
 					<div class="col-md-6 form-right wow fadeInDown animated" data-wow-delay=".5s">
-						<input class="email" type="text" placeholder="password" required="" name ="pwd">
+						<input class="email" type="text" placeholder="text" required="" name ="pwd">
 					</div>
 					<div class="clearfix"> </div>
 					<!--<input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="">
@@ -844,7 +844,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--footer-->
 	<div class="footer">
 		<div class="container">
-			<h3 class="wow zoomIn animated" data-wow-delay=".5s"><a href="index.html">Vacation</a></h3>
+			<h3 class="wow zoomIn animated" data-wow-delay=".5s"><a href="index.">Vacation</a></h3>
 			<p class="wow fadeInUp animated" data-wow-delay=".7s">© 2016 Vacation. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 			<div class="social-icons wow fadeInUp animated" data-wow-delay=".9s">
 				<ul>
@@ -940,9 +940,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     
     %>
     <%-- end web service invocation --%><hr/>
-
-    <%-- end web service invocation --%><hr/>
-
+   
+   
     
     
    
