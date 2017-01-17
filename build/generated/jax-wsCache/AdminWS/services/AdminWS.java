@@ -27,24 +27,6 @@ public interface AdminWS {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "existAdmin", targetNamespace = "http://services/", className = "services.ExistAdmin")
-    @ResponseWrapper(localName = "existAdminResponse", targetNamespace = "http://services/", className = "services.ExistAdminResponse")
-    @Action(input = "http://services/AdminWS/existAdminRequest", output = "http://services/AdminWS/existAdminResponse")
-    public boolean existAdmin(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
      * @param login
      * @param pwd
      */
@@ -87,6 +69,24 @@ public interface AdminWS {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "existAdmin", targetNamespace = "http://services/", className = "services.ExistAdmin")
+    @ResponseWrapper(localName = "existAdminResponse", targetNamespace = "http://services/", className = "services.ExistAdminResponse")
+    @Action(input = "http://services/AdminWS/existAdminRequest", output = "http://services/AdminWS/existAdminResponse")
+    public boolean existAdmin(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<services.Admin>
      */
@@ -96,5 +96,20 @@ public interface AdminWS {
     @ResponseWrapper(localName = "listAdminResponse", targetNamespace = "http://services/", className = "services.ListAdminResponse")
     @Action(input = "http://services/AdminWS/listAdminRequest", output = "http://services/AdminWS/listAdminResponse")
     public List<Admin> listAdmin();
+
+    /**
+     * 
+     * @param idVoy
+     * @param idClient
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addBooking", targetNamespace = "http://services/", className = "services.AddBooking")
+    @ResponseWrapper(localName = "addBookingResponse", targetNamespace = "http://services/", className = "services.AddBookingResponse")
+    @Action(input = "http://services/AdminWS/addBookingRequest", output = "http://services/AdminWS/addBookingResponse")
+    public void addBooking(
+        @WebParam(name = "idVoy", targetNamespace = "")
+        int idVoy,
+        @WebParam(name = "idClient", targetNamespace = "")
+        int idClient);
 
 }

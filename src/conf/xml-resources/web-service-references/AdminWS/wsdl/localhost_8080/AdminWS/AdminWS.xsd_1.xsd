@@ -4,6 +4,10 @@
 
 <xs:element name="addAdminResponse" type="tns:addAdminResponse"/>
 
+<xs:element name="addBooking" type="tns:addBooking"/>
+
+<xs:element name="addBookingResponse" type="tns:addBookingResponse"/>
+
 <xs:element name="addVol" type="tns:addVol"/>
 
 <xs:element name="addVolResponse" type="tns:addVolResponse"/>
@@ -59,6 +63,17 @@
 </xs:complexType>
 
 <xs:complexType name="addAdminResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="addBooking">
+<xs:sequence>
+<xs:element name="idVoy" type="xs:int"/>
+<xs:element name="idClient" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBookingResponse">
 <xs:sequence/>
 </xs:complexType>
 

@@ -786,7 +786,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <input type="text" placeholder="Login" name="login" required="">
                         </div>
                         <div class="col-md-6 form-right wow fadeInDown animated" data-wow-delay=".5s">
-                            <input class="email" type="text" placeholder="text" required="" name ="pwd">
+                            <input class="email" type="text" placeholder="password" required="" name ="pwd">
                         </div>
                         <div class="clearfix"> </div>
                         <!--<input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="">

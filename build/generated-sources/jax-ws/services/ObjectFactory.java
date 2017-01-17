@@ -31,7 +31,9 @@ public class ObjectFactory {
     private final static QName _ListAdminResponse_QNAME = new QName("http://services/", "listAdminResponse");
     private final static QName _ExistAdmin_QNAME = new QName("http://services/", "existAdmin");
     private final static QName _AddAdminResponse_QNAME = new QName("http://services/", "addAdminResponse");
+    private final static QName _AddBooking_QNAME = new QName("http://services/", "addBooking");
     private final static QName _AddAdmin_QNAME = new QName("http://services/", "addAdmin");
+    private final static QName _AddBookingResponse_QNAME = new QName("http://services/", "addBookingResponse");
     private final static QName _AddVol_QNAME = new QName("http://services/", "addVol");
 
     /**
@@ -50,11 +52,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddBooking }
+     * 
+     */
+    public AddBooking createAddBooking() {
+        return new AddBooking();
+    }
+
+    /**
      * Create an instance of {@link ExistAdmin }
      * 
      */
     public ExistAdmin createExistAdmin() {
         return new ExistAdmin();
+    }
+
+    /**
+     * Create an instance of {@link AddBookingResponse }
+     * 
+     */
+    public AddBookingResponse createAddBookingResponse() {
+        return new AddBookingResponse();
     }
 
     /**
@@ -177,12 +195,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddBooking }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "addBooking")
+    public JAXBElement<AddBooking> createAddBooking(AddBooking value) {
+        return new JAXBElement<AddBooking>(_AddBooking_QNAME, AddBooking.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddAdmin }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://services/", name = "addAdmin")
     public JAXBElement<AddAdmin> createAddAdmin(AddAdmin value) {
         return new JAXBElement<AddAdmin>(_AddAdmin_QNAME, AddAdmin.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddBookingResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services/", name = "addBookingResponse")
+    public JAXBElement<AddBookingResponse> createAddBookingResponse(AddBookingResponse value) {
+        return new JAXBElement<AddBookingResponse>(_AddBookingResponse_QNAME, AddBookingResponse.class, null, value);
     }
 
     /**

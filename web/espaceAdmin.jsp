@@ -592,13 +592,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--//team-->
         <!--portfolio-->
         <div id="portfolio" class="portfolio">
-            <div class="contact" >
+            <div class="contact">
             <div class="container">
                 <h3 class="title wow fadeInDown animated" data-wow-delay=".5s">Add Voyage</h3>
                 <div class="contact-form">
                     <p class="wow slideInDown animated" data-wow-delay=".5s"></p>
+                    <form>
                     <div class="col-md-6 form-left wow fadeInDown animated" data-wow-delay=".5s">
                         <!--<h5 >Flying from</h5>-->
+                        
                         <input type="text" placeholder="Flying from" required="" name="villeDep2">
                     </div>
                     <div class="col-md-6 form-right wow fadeInDown animated" data-wow-delay=".5s">
@@ -624,12 +626,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="clearfix"> </div>
                   <!--  <input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="">
                     <!--<textarea class="wow fadeInDown animated" data-wow-delay=".9s" placeholder="Message" required=""></textarea>-->
-                    <input type="submit" value="SUBMIT" name="submit2">
+                    <input type="submit" value="SUBMIT" name="submitVoyage">
                 </form>
                 </div>
             </div>
             
-        </div>       
+        </div>  
+        </div>
         <!--//portfolio-->
         <!--twitter-->	
         <div class="twitter">
@@ -660,7 +663,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="clearfix"> </div>
                         <!--<input class="wow fadeInDown animated" data-wow-delay=".7s" type="text" placeholder="Phone" required="" >
                         <textarea class="wow fadeInDown animated" data-wow-delay=".9s" placeholder="Message" required=""></textarea>-->
-                        <input type="submit" value="SUBMIT" name="submitContact">
+                        <input type="submit" value="SUBMIT" name="submitBoking">
                     </form>
                 </div>
             </div>
@@ -794,67 +797,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 
                 services.AdminWS_Service service = new services.AdminWS_Service();
                 services.AdminWS port = service.getAdminWSPort();
-                // TODO initialize WS operation arguments here
-                
-                //System.out.println("\n\n-------espace admin22!!!\n\n");
-               java.lang.String villeDep = request.getParameter("villeDep2");
-                java.lang.String villeDest = request.getParameter("villeDest2");
-                //System.out.println(villeDep);
-               /* System.out.println("***villeDep***"+villeDep);*/
-                int placeDisp = Integer.parseInt(request.getParameter("place2"));
-                //System.out.println("!request.getParameter(place)");
-                java.lang.Integer prix = Integer.parseInt(request.getParameter("prix2"));
-                //System.out.println("!request.getParameter(prix)");
-                //contact:
-                java.lang.String dateDep = request.getParameter("dateDep2");
-                //javax.xml.datatype.XMLGregorianCalendar dateDep = null;
-                 String dateArr=request.getParameter("dateArr2");
-               // javax.xml.datatype.XMLGregorianCalendar dateArr = null;
-                //System.out.println(placeDisp);
-                /*System.out.println("request.getParameter(dateDep)");
-                System.out.println("submitvoy  " + request.getParameter("submitVoy"));
 
-                if(request.getParameter("submitVoy")!=null){
-            
-                 System.out.println("\n\n-------submitVoy n'est pas null-----\n\n");
-                   System.out.println("villeDep apres submit = "+villeDep);
-                }
-                 //port.addVol(villeDep, villeDest, placeDisp, prix, dateDep, dateArr);
-                 else{
-                 System.out.println("pas de submit voy");
-                 }
-                if(request.getParameter("submitContact")!=null){
-            
-                 System.out.println("\n\n-------submitContact n est pas null-----\n\n");
-                   System.out.println("nom apres submit = "+nom);
-                }
-                 //port.addVol(villeDep, villeDest, placeDisp, prix, dateDep, dateArr);
-                 else{
-                 System.out.println("pas de submit contact");
-                 }*/
-                if(request.getParameter("submit2")!=null){
-            
-                 System.out.println("\n\n-------submit2 n'est pas null-----\n\n");
-                   System.out.println(request.getParameter("villeDep2"));
-                   System.out.println(request.getParameter("villeDest2"));
-                    System.out.println(request.getParameter("place2"));
-                     System.out.println(request.getParameter("prix2"));
-                      System.out.println(request.getParameter("dateArr2"));
-                       System.out.println(request.getParameter("dateDep2"));
-                   //System.out.println("ville depart: "+request.getParameter("villedep"));
-                
+                String villeDep = request.getParameter("villeDep2");
+                String villeDest = request.getParameter("villeDest2");
+                int placeDisp = Integer.parseInt(request.getParameter("place2"));
+                int prix = Integer.parseInt(request.getParameter("prix2"));
+                String dateDep = request.getParameter("dateDep2");
+                String dateArr=request.getParameter("dateArr2");
+
+                if(request.getParameter("submitVoyage")!=null){
                  port.addVol(villeDep, villeDest, placeDisp, prix, dateDep, dateArr);
                 }
-                 else{
-                 System.out.println("pas de submit2");
-                 }
-                System.out.println("\n\n-------fin d espace admin \n\n");
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
                        
-            }
+            }   
         %>
         <%-- end web service invocation --%><hr/>
-
     </body>
 </html>
